@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TestAJAX</title>
+		<script src="https://unpkg.com/inferno@3.6.0/dist/inferno.min.js"></script>
+		<link href="css/css.css" rel="stylesheet">
+		<!--<script type="text/javascript" src="script/forg.lib.min.js" ></script>-->
+		<!-- <script src="https://unpkg.com/vue/dist/vue.js" ></script>-->
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha512/0.3.0/sha512.min.js" ></script>-->
+		<!-- <script src="script/enc-base64.js" ></script> -->
+		<script src="script/sha512.js" ></script>
+		<script src="script/srandom.js" ></script>
+		<script src="script/cryptico.browser.min.js" ></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js" async ></script> -->
+		<!-- <script src="http://digitalbazaar.github.io/forge/javascripts/forge/forge.min.0.6.12.js" ></script> -->
+		<!-- <script type="text/javascript" src="https://unpkg.com/node-forge@0.7.0/dist/forge.min.js"></script>-->
+    <script type="text/javascript" src="script/jwt-min.js"  ></script>
+		<script type="text/javascript" src="script/lib1.js"  ></script>
+  </head>
+  <body>
+
+
+		<form name="form_reloj">
+		<input type="text" name="reloj" size="10">
+		</form>
+
+		<div class="aes" id="as">
+		</div>
+
+    <form class="as" action="#" method="post">
+      <input type="text" id="text" value=""/>
+      <input type="text" id="valor" value=""/>
+      <input type="button" value="Enviar" onclick="valida()"/>
+      <input type="button" value="GET" onclick="get()"/>
+    </form>
+
+
+    <script>
+
+      var div = document.getElementById('as')
+
+      var text = document.getElementById('text')
+
+      var valor = document.getElementById('valor')
+
+		</script>
+		<script language="JavaScript">
+			function mueveReloj(){
+				momentoActual = new Date()
+				hora = momentoActual.getHours()
+				minuto = momentoActual.getMinutes()
+				segundo = momentoActual.getSeconds()
+
+				horaImprimible = hora + " : " + minuto + " : " + segundo
+
+				document.form_reloj.reloj.value = horaImprimible
+
+				setTimeout("mueveReloj()",1000)
+			}
+			mueveReloj()
+		</script>
+  </body>
+</html>
