@@ -16,14 +16,13 @@ COPY npm-shrinkwrap.json $HOME
 # admin
 RUN chown -R app:app $HOME
 
-USER app
+USER root
 WORKDIR $HOME
 # API : npm install
-RUN npm cache clean &&\
-    npm install --silent --progress=false
+RUN # npm cache clean &&\
+    npm install # --silent # --progress=false
 
-# admin
-USER root
+
 
 # API : Cunstom
 RUN echo $(/usr/bin/npm --silent --progress=false install -g nodemon) >>\
