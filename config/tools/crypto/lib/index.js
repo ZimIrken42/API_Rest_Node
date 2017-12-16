@@ -1,7 +1,7 @@
 const cryptico = require('cryptico')
 const forge = require('node-forge')
 const jwt = require('jwt-simple')
-// const timer = require('../../../timer')// .main.exec // deprecated
+const timer = require('../../../timer')// .main.exec // deprecated
 const random = require('secure-random')
 
 const keys = {
@@ -43,7 +43,7 @@ const agendGenereteRandomKey = () => {
 	// console.log('WORK '+ process.pid);
 }
 
-// timer.core.insert(agendGenereteRandomKey)
+timer.core.insert(agendGenereteRandomKey)
 
 const encrypticon = (cipher, key) => {
 	return new cryptico.encrypt(cipher, key)

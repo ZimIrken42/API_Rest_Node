@@ -2,6 +2,8 @@ const lib = require('./index.js')
 
 console.log(Object.keys(lib));
 
+// cryptico lib node module
+
 prvKey = lib.prvKey
 prvPub = lib.pubKey
 
@@ -11,13 +13,17 @@ let mensage ='- GO TO HELLL -'
 
 let encriptedMesage = lib.encrypticon(mensage, prvPub)
 
-// console.log(encriptedMesage);
+console.log("MESSAGE ENCRIPTED");
+console.log(encriptedMesage);
 
-mensageDecripted = lib.decrypticon(encriptedMesage, prvPub)
+let mensageDecripted = lib.decrypticon(encriptedMesage.cipher, prvKey)
+
+console.log("MESSAGE DENCRIPTED");
+console.log(mensageDecripted);
 
 
 //
-// console.log(Object.keys(forge));
+// console.log(Object.keys(lib.forge));
 // console.log(forge.util);
 // bly = forge.SHA512(cryptico.string2bytes('hell').join(''))
 

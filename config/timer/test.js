@@ -1,6 +1,6 @@
-const FacCore = require('./core2').main
+const FacCore = require('./core').main
 
-const core = FacCore()
+const core = FacCore
 
 
 console.log(core);
