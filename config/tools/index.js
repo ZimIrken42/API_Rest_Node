@@ -1,8 +1,6 @@
-const constr = require('./constr')
+const crypto = require('./crypto')
 
 module.exports = {
 
-  contr : constr.constrCont,
-  cache : cache.cache,
   crypto : crypto
 }
