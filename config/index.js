@@ -2,7 +2,6 @@ const os = require('os')
 const cluster = require('express-cluster')
 const path = require ("path")
 const tools = require('./tools')
-const timer = require('./timer')
 
 const uport = 3000
 const cores = os.cpus().length-1
@@ -27,9 +26,9 @@ module.exports = {
 	obj : pessoas,
 	rand: rand,
 	join : join,
-	port : uport,	
+	port : uport,
 	/// tools
-	timer : timer,
+	// timer : timer, # deprecated
 	path : path,
 	cluster : cluster,
 	tools : tools,
