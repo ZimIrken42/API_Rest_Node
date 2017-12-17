@@ -11,34 +11,38 @@ prvPub = lib.pubKey
 
 let encriptedMesage = ''
 let dencriptedMesage = ''
-( async () => {
 
-  let encriptada = ( valor ) => encriptedMesage = valor;
+// ( async () => {
+//
+//   let encriptada = ( valor ) => encriptedMesage = valor;
+//
+//   let mensage = '- GO TO HELLL -';
+//
+//   console.log ( "MESSAGE ENCRIPTED" );
+//
+//   lib.encrypticon ( mensage, prvPub, encriptada )
+//
+//
+//   // setInterval(() => console.log(encriptedMesage), 1000);
+//
+//
+// })()
 
-  let mensage = '- GO TO HELLL -';
+cipher = ''
 
-  console.log ( "MESSAGE ENCRIPTED" );
-
-  lib.encrypticon ( mensage, prvPub, encriptada )
-
-
-  // setInterval(() => console.log(encriptedMesage), 1000);
-
-
-})()
-/*
-let encriptada = ( valor ) => encriptedMesage = valor;
+let encriptada = ( valor ) => cipher = valor.cipher
 
 let mensage = '- GO TO HELLL -';
 
 console.log ( "MESSAGE ENCRIPTED" );
 
 lib.encrypticon ( mensage, prvPub, encriptada )
+console.log('MSG ' + cipher);
 // (async () => await lib.encrypticon(mensage, prvPub)
 //                .then(res => console.log(res))) ()
 // let encriptedMesage = lib.encrypticon(mensage, prvPub).then(res => res)
-setInterval(() => console.log(encriptedMesage), 1000);
-
+setInterval(() => console.log(cipher), 1000);
+/*
 // console.log(encriptedMesage);
 decriptada = ( valor ) => console.log( valor );
 // let mensageDecripted = lib.decrypticon(encriptedMesage.cipher, prvKey)
