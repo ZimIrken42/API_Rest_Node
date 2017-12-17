@@ -1,6 +1,6 @@
 const allocatorOfFunctions = ( () => {
 
-  let listOfFunctions = []
+  let listOfFunctions = new Array ()
 
   const initFunction = () => {}
 
@@ -8,26 +8,29 @@ const allocatorOfFunctions = ( () => {
 
 	const runFunctions = () => listOfFunctions.forEach ( ( instantFunction ) => instantFunction () )
 
-  const insertFunction = ( newFunction ) => if ( typeof newFunction === 'function' )
-                                              listOfFunctions.push ( newFunction )
+  const insertFunction = ( newFunction ) => {
+
+    if ( typeof newFunction === 'function' )
+      listOfFunctions.push ( newFunction )
+  }
 
   const searchFunction = ( candidateFunction ) => {
+
     return listOfFunctions.map ( functionKnow => functionKnow == candidateFunction )
                                     .indexOf ( true )
   }
   const removeFunction = ( possitionOfFunction ) => {
 
-    if ( possitionOfFunction > 0 ) listOfFunctions.splice ( possitionOfFunction, 1 )
-    return ( possitionOfFunction > 0 )
+    return ( possitionOfFunction > 0 ) ? listOfFunctions.splice ( possitionOfFunction, 1 ) : false
   }
 
-  const resetList = () => return listOfFunctions = [ listOfFunctions [ 0 ] ]
+  const resetList = () => listOfFunctions = [ listOfFunctions [ 0 ] ]
 
-  const showFunctions = () => return listOfFunctions
+  const showFunctions = () => listOfFunctions
 
-	return {
+  return {
 
-		begin : runFunctions,
+    run : runFunctions,
     insert : insertFunction,
     search : searchFunction,
     remove : removeFunction,
@@ -37,6 +40,11 @@ const allocatorOfFunctions = ( () => {
 } ) ()
 
 module.exports = {
-  
-  main : allocatorOfFunctions
+
+  run : allocatorOfFunctions.run,
+  insert : allocatorOfFunctions.insert,
+  search : allocatorOfFunctions.search,
+  remove : allocatorOfFunctions.remove,
+  reset : allocatorOfFunctions.reset,
+  show : allocatorOfFunctions.show
 }

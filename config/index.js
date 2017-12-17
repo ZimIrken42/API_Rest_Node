@@ -1,6 +1,7 @@
 const os = require ( 'os' )
 const cluster = require ( 'express-cluster' )
 const path = require ( "path" )
+const timer = require ( './timer' )
 const tools = require ( './tools' )
 const obj = require ( './json' )
 
@@ -9,12 +10,15 @@ const cores = os.cpus () .length - 1
 // const cores2 = ( ( cores - 1 ) >= 0 ) ? ( cores - 1 ) : 0
 const view = "../../../views/"
 
-const rand = ( arg ) => Math.round ( Math.random () * arg )
+const genRandomNumber = ( seed ) => Math.round ( Math.random () * seed )
+
+timer.run ()
+startTimer ()
 
 module.exports = {
 	/// tests
 	obj : obj,
-	rand: rand,
+	randum: genRandomNumber,
 	port : uport,
 	/// tools
 	// timer : timer, # deprecated

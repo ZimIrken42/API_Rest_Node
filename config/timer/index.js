@@ -1,19 +1,39 @@
-const minutesTime = 14
-const timeInMiliSecunds = minutesTime * 1000 * 60
+const allocatorOfFunctions = require ( './allocatorOfFunctions' )
 
-const core = require ( './allocatorOfFunctions' )
+let timerSet = setTimeout
 
-const main = core.main
+let minutesTime = 14
 
-main.begin ()
+const stop = () => clearTimeout ( timerSet )
 
-let timer = setInterval ( main.begin, timeInMiliSecunds )
+const getTimeInMiliSecunds = () => minutesTime * 1000 * 60
 
-let stop = () => { clearInterval ( timer ) }
+const getTimer = () => timerSet
+
+const startTimer = () => {
+
+  return timerSet = setTimeout ( () => {
+
+      allocatorOfFunctions.run
+      startTimer ()
+    }, getTimeInMiliSecunds () )
+}
+
+const setTimer = newTimer => timerSet = newTimer
+
+const setTimeInMinutes = newMinutes => {
+
+  minutesTime = newMinutes
+
+  stop ( timerSet )
+
+  timerSet = startTimer ()
+}
 
 module.exports = {
 
-  start : main.begin,
+  run : allocatorOfFunctions.run,
+  start : startTimer,
   stop : stop,
-  core : main
+  core : allocatorOfFunctions
 }
