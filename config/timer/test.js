@@ -1,4 +1,4 @@
-const FacCore = require('./core').main
+const FacCore = require('./allocatorOfFunctions').main
 
 const core = FacCore
 

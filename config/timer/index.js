@@ -1,7 +1,7 @@
 const minutesTime = 14
 const timeInMiliSecunds = minutesTime * 1000 * 60
 
-const core = require ( './core' )
+const core = require ( './allocatorOfFunctions' )
 
 const main = core.main
 

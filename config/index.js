@@ -5,7 +5,7 @@ const tools = require ( './tools' )
 const obj = require ( './json' )
 
 const uport = 3000
-const cores = os.cpus () .length-1
+const cores = os.cpus () .length - 1
 // const cores2 = ( ( cores - 1 ) >= 0 ) ? ( cores - 1 ) : 0
 const view = "../../../views/"
 
