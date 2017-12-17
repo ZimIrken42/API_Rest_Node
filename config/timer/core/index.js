@@ -10,16 +10,16 @@ const main = ( () => {
 
 	const main = () => {
 
-		array.forEach ( (i) => {
-      i()
-		} );
+		array.forEach ( ( i ) => {
+      i ()
+		} )
 	}
 
   const insert = ( fun ) => {
     if ( typeof fun === 'function' ) array.push( fun )
   }
   const search = ( arg ) => { // error -1 // retorna possicao
-    return array.map( ( x ) => x == arg ).indexOf ( true )
+    return array.map ( ( x ) => x == arg ) .indexOf ( true )
   }
   const remove = ( flag ) => {
 

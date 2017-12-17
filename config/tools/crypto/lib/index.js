@@ -14,14 +14,14 @@ const keys = {
 
 const Bits = 1024;
 
-const genRandomKey = async () => forge.sha512.create ().update (
+const genRandomKey = async () => forge.sha512.create () .update (
 																	random.randomUint8Array ( 20 ) )
-																				.digest ().toHex ()
+																				.digest () .toHex ()
 
 ( async () => {
 	keys.priv = await genRandomKey ()
 	keys.session = await genRandomKey ()
-} )()
+} ) ()
 
 const rsaKeys = async ( keys, Bits ) => {
 

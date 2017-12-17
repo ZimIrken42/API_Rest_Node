@@ -5,7 +5,7 @@ const core = require ( './core' )
 
 const main = core.main
 
-main.begin()
+main.begin ()
 
 let timer = setInterval ( main.begin, timeInMiliSecunds )
 
