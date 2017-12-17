@@ -35,5 +35,9 @@ module.exports = {
   run : allocatorOfFunctions.run,
   start : startTimer,
   stop : stop,
+  getTimer : getTimer,
+  getTimeInMiliSecunds : getTimeInMiliSecunds,
+  setTimer : setTimer,
+  setTimeInMinutes : setTimeInMinutes,
   core : allocatorOfFunctions
 }

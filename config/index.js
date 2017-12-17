@@ -13,7 +13,7 @@ const view = "../../../views/"
 const genRandomNumber = ( seed ) => Math.round ( Math.random () * seed )
 
 timer.run ()
-startTimer ()
+timer.start ()
 
 module.exports = {
 	/// tests
