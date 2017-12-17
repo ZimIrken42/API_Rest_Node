@@ -1,5 +1,4 @@
 const lib = require ( './lib' )
-//// TOOLS FOR CRYPTO !!!!!!!!!!!!!!!!!!!!!!11
 
 const base64 = {
 	encode : valor => lib.forge.util.encode64 ( valor ),
