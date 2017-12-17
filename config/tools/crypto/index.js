@@ -1,34 +1,35 @@
-const lib = require('./lib')
+const lib = require ( './lib' )
 
 //// TOOLS FOR CRYPTO !!!!!!!!!!!!!!!!!!!!!!11
 
-const b64 = {
-	encode : valor => lib.forge.util.encode64(valor),
-	decode : valor => lib.forge.util.decode64(valor)
+const base64 = {
+	encode : valor => lib.forge.util.encode64 ( valor ),
+	decode : valor => lib.forge.util.decode64 ( valor )
 }
 
-const sha = value => lib.forge.sha512.create().update(value)
+const sha = value => lib.forge.sha512.create().update ( value )
 															.digest().toHex()
 
-const createToken = payload => key => lib.jwt.encode(payload, key)
+const createToken = payload => key => lib.jwt.encode ( payload, key )
 
 const Token = obj => key => {
-	obj['time'] = new Date().getTime()
-	obj['espd'] = new Date().getTime() + (60 * 1000)
-	obj['valid'] = new Date().getTime()
-	return createToken(b64.encode(JSON.stringify(obj)))(key)
+	obj [ 'time' ] = new Date().getTime()
+	obj [ 'espd' ] = new Date().getTime() + (60 * 1000)
+	obj [ 'valid' ] = new Date().getTime()
+	return createToken ( base64.encode ( JSON.stringify ( obj ) ) )( key )
 }
 
 // const decipherToken = token => key => lib.jwt.decode(token, key)
 
-const decipher = token => key => JSON.parse(b64.decode(
-														lib.jwt.decode(token, key))).data
+const decipher = token => key => JSON.parse ( base64.decode (
+														lib.jwt.decode ( token, key ) ) ).data
 
 const validToken = token => key => {
+
 	try {
 
-		token = decipher(token)(key)
-	} catch (e) {
+		token = decipher ( token )( key )
+	} catch ( e ) {
 		// console.log('ERROR '+e);
 		return false
 	} return true
@@ -53,6 +54,6 @@ module.exports = {
 	forge : lib.forge,
 	/// tools
 	sha512 : sha,
-	base64 : b64
+	base64 : base64
 
 }

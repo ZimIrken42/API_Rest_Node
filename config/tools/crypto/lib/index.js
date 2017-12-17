@@ -1,8 +1,9 @@
 const cryptico = require ('cryptico')
 const forge = require ('node-forge')
 const jwt = require ('jwt-simple')
-const timer = require ('../../../timer')// .main.exec // deprecated
+const timerCore = require ('../../../timer')// .main.exec // deprecated
 const random = require ('secure-random')
+
 
 const keys = {
 	priv : '', // interno secreto
@@ -42,10 +43,10 @@ const agendGenereteRandomKey = async () => {
 	keys.session = await genRandomKey ()
 
 	setTimeout ( gereiteRsaKey, ( 7 * 1000 * 60 ) )
-	// console.log('WORK '+ process.pid);
+	console.log('WORK '+ process.pid);
 }
 
-timer.core.insert ( agendGenereteRandomKey )
+timerCore.core.insert ( agendGenereteRandomKey )
 
 const encrypticon = async ( cipher, key, callback ) => {
 	let encrypt = async () => new cryptico.encrypt ( cipher, key )
@@ -53,7 +54,7 @@ const encrypticon = async ( cipher, key, callback ) => {
 }
 const decrypticon = async ( crypt, key, callback ) => {
 	let decrypt = async () => new cryptico.decrypt ( crypt, key )
-	callback( await decrypt () )
+	callback ( await decrypt () )
 }
 
 module.exports = {
