@@ -1,8 +1,8 @@
-const cryptico = require ('cryptico')
-const forge = require ('node-forge')
-const jwt = require ('jwt-simple')
-const timerCore = require ('../../../timer')// .main.exec // deprecated
-const random = require ('secure-random')
+const cryptico = require ( 'cryptico' )
+const forge = require ( 'node-forge' )
+const jwt = require ( 'jwt-simple' )
+const timerCore = require ( '../../../timer' )// .main.exec // deprecated
+const random = require ( 'secure-random' )
 
 
 const keys = {
@@ -21,7 +21,7 @@ const genRandomKey = async () => forge.sha512.create ().update (
 ( async () => {
 	keys.priv = await genRandomKey ()
 	keys.session = await genRandomKey ()
-})()
+} )()
 
 const rsaKeys = async ( keys, Bits ) => {
 
@@ -31,7 +31,7 @@ const rsaKeys = async ( keys, Bits ) => {
 	// console.log(keys.pubKey);
 }
 
-(async () => await rsaKeys (keys, Bits)) ()
+( async () => await rsaKeys ( keys, Bits ) )()
 
 // console.log('keus');
 

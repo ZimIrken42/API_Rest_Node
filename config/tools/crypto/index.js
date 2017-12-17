@@ -1,5 +1,4 @@
 const lib = require ( './lib' )
-
 //// TOOLS FOR CRYPTO !!!!!!!!!!!!!!!!!!!!!!11
 
 const base64 = {
@@ -7,15 +6,15 @@ const base64 = {
 	decode : valor => lib.forge.util.decode64 ( valor )
 }
 
-const sha = value => lib.forge.sha512.create().update ( value )
-															.digest().toHex()
+const sha = value => lib.forge.sha512.create () .update ( value )
+															.digest () .toHex ()
 
 const createToken = payload => key => lib.jwt.encode ( payload, key )
 
 const Token = obj => key => {
-	obj [ 'time' ] = new Date().getTime()
-	obj [ 'espd' ] = new Date().getTime() + (60 * 1000)
-	obj [ 'valid' ] = new Date().getTime()
+	obj [ 'time' ] = new Date () .getTime ()
+	obj [ 'espd' ] = new Date () .getTime ()  + ( 60 * 1000 )
+	obj [ 'valid' ] = new Date () .getTime ()
 	return createToken ( base64.encode ( JSON.stringify ( obj ) ) )( key )
 }
 

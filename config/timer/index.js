@@ -1,13 +1,15 @@
 const minutesTime = 14
 const timeInMiliSecunds = minutesTime * 1000 * 60
 
-const core = require('./core')
+const core = require ( './core' )
 
 const main = core.main
 
-let timer = setInterval(main.begin, timeInMiliSecunds)
+main.begin()
 
-let stop = () => { clearInterval(timer) }
+let timer = setInterval ( main.begin, timeInMiliSecunds )
+
+let stop = () => { clearInterval ( timer ) }
 
 module.exports = {
 
