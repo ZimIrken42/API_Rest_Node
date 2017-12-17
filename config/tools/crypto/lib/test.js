@@ -9,17 +9,27 @@ prvPub = lib.pubKey
 
 // console.log(prvPub);
 
-let mensage ='- GO TO HELLL -'
+let encriptedMesage = ''
+let dencriptedMesage = ''
 
-let encriptedMesage = lib.encrypticon(mensage, prvPub)
+let encriptada = ( valor ) => encriptedMesage = valor;
 
-console.log("MESSAGE ENCRIPTED");
-console.log(encriptedMesage);
+let mensage = '- GO TO HELLL -';
 
-let mensageDecripted = lib.decrypticon(encriptedMesage.cipher, prvKey)
+console.log ( "MESSAGE ENCRIPTED" );
 
-console.log("MESSAGE DENCRIPTED");
-console.log(mensageDecripted);
+lib.encrypticon ( mensage, prvPub, encriptada )
+// (async () => await lib.encrypticon(mensage, prvPub)
+//                .then(res => console.log(res))) ()
+// let encriptedMesage = lib.encrypticon(mensage, prvPub).then(res => res)
+setInterval(() => console.log(encriptedMesage), 1000);
+/*
+// console.log(encriptedMesage);
+decriptada = ( valor ) => console.log( valor );
+// let mensageDecripted = lib.decrypticon(encriptedMesage.cipher, prvKey)
+lib.decrypticon ( encriptedMesage.cipher, prvKey, decriptada)
+console.log ( "MESSAGE DENCRIPTED" );
+// console.log(mensageDecripted);
 
 
 //
@@ -68,3 +78,4 @@ console.log(mensageDecripted);
 // // console.log (decry)
 // // console.log(fdec);
 // if (decry.status == 'success') console.log('OK');
+*/
