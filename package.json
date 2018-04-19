@@ -19,6 +19,7 @@
     "mongoose": "^4.10.3",
     "node-forge": "^0.7.1",
     "path": "^0.12.7",
-    "secure-random": "^1.1.1"
+    "secure-random": "^1.1.1",
+    "webpack": "^4.6.0"
   }
 }
